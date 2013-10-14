@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	h1 Cam
+
+	img(src='http://2.bp.blogspot.com/-vUaI7ULev5c/UBLAVTQS4_I/AAAAAAAACE8/RYnTuoGlz28/s400/living-room-design.jpg')
+
+	h1 Sensors
+  
+	p= state.last_data.DA
+
+	if (armed)
+		a#arm(href='/unarm') Unarm
+	else
+		a#unarm(href='/arm') Arm
+
+	pre= JSON.stringify(state)
